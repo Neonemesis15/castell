@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Categoría</title>
+        <title>Campain</title>
         <%@include file="/public/header.jsp" %>
     </head>
     <body>
@@ -16,24 +16,39 @@
                 <!-- CONTENIDO -->
                 <section class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                    <h1 class="page-header">Nuevo Categoría</h1>
+                    <h1 class="page-header">Nuevo Campaña</h1>
 
-                    <form method="post" action="<%=request.getContextPath()%>/categoria/save" class="form-horizontal">
+                    <form method="post" action="<%=request.getContextPath()%>/campain/save" class="form-horizontal">
 
-                        <input type="hidden" value="${categoria.id}" name="id">
+                        <input type="hidden" value="${campain.id}" name="id">
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Nombre</label>
 
                             <div class="col-sm-10">
-                                <input type="text" name="nombre" class="form-control" value="${categoria.nombre}" >
+                                <input type="text" name="nombre" class="form-control" value="${campain.nombre}" >
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Fecha Inicio</label>
 
+                            <div class="col-sm-10">
+                                <input type="date" name="fechaInicio" class="form-control" value="${campain.fechaInicio}" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Fecha Fin</label>
+
+                            <div class="col-sm-10">
+                                <input type="date" name="fechaFin" class="form-control" value="${campain.fechaFin}" >
+                            </div>
+                        </div>
+                   
+                            
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
-                                <a class="btn btn-link" href="<%=request.getContextPath()%>/categoria"> Cancelar</a>
+                                <a class="btn btn-link" href="<%=request.getContextPath()%>/campain"> Cancelar</a>
                             </div>
                         </div>
                     </form>

@@ -26,7 +26,7 @@ public class Persona {
     @Column(name = "materno")
     private String materno;
 
-    @Column(name = "nombres")
+    @Column(name = "nombres")   
     private String nombres;
 
     @Column(name = "sexo")
