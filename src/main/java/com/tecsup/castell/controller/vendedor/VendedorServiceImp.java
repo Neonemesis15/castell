@@ -5,6 +5,7 @@ import com.tecsup.castell.dao.UsuarioDAO;
 import com.tecsup.castell.dao.VendedorDAO;
 import com.tecsup.castell.helper.EstadoEnum;
 import com.tecsup.castell.helper.RolEnum;
+import com.tecsup.castell.mail.MailerService;
 import com.tecsup.castell.model.Persona;
 import com.tecsup.castell.model.Usuario;
 import com.tecsup.castell.model.Vendedor;
@@ -26,6 +27,9 @@ public class VendedorServiceImp implements VendedorService {
     @Autowired
     UsuarioDAO usuarioDAO;
 
+    @Autowired
+    MailerService mailer;
+    
     @Override
     public List<Vendedor> allVendedor() {
         return vendedorDAO.all();
@@ -53,6 +57,8 @@ public class VendedorServiceImp implements VendedorService {
             usuario.setPassword(persona.getEmail());
             usuario.setRol(RolEnum.VENTA.toString());
             usuarioDAO.save(usuario);
+            
+            mailer.sendMail(persona.getEmail(),"CASTEL CRM - USUARIO","<H1>USUARIO MAIL<H1>");
             
         } else {
             personaDAO.update(persona);
