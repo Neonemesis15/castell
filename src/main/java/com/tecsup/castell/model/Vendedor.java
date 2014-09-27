@@ -16,8 +16,10 @@ public class Vendedor {
     @GeneratedValue
     @Column(name = "id")
     private Long id;
+    
     @Column(name = "estado")
     private String estado;
+    
     @OneToOne
     @JoinColumn(name = "id_persona")
     private Persona persona;
