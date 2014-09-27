@@ -16,15 +16,12 @@ public class Vendedor {
     @GeneratedValue
     @Column(name = "id")
     private Long id;
-
     @Column(name = "estado")
     private String estado;
-
     @OneToOne
     @JoinColumn(name = "id_persona")
     private Persona persona;
 
-    
     public Long getId() {
         return id;
     }
@@ -48,6 +45,4 @@ public class Vendedor {
     public void setPersona(Persona persona) {
         this.persona = persona;
     }
-    
-    
 }
